@@ -28,7 +28,6 @@ pipeline {
         stage("Last"){
             steps {
                 echo "Completed!!"
-                }
             }
         }
     }
