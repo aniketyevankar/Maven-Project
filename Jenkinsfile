@@ -1,26 +1,28 @@
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
         stage("Clean Up"){
-            steps{
+            steps {
                 deleteDir()
             }
         }
         stage("Clone Repo"){
-            steps{
-                sh "git clone https://github.com/gabrielf/maven-samples.git"
+            steps {
+                sh "git clone https://github.com/javaparser/javasymbolsolver-maven-sample.git"
             }
         }
         stage("Build"){
-            steps{
-                dir("maven-samples")
-                sh "mvn clean install"
+            steps {
+                dir("javasymbolsolver-maven-sample") {
+                    sh "mvn clean install"
+                }
             }
         }
         stage("Test"){
-            steps{
-                dir("maven-samples")
-                sh "mvn test"
+            steps {
+                dir("javasymbolsolver-maven-sample") {
+                    sh "mvn test"
+                }
             }
         }
     }
