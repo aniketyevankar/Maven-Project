@@ -33,6 +33,7 @@ pipeline {
          stage("Python Script Execution"){
             steps {
                 dir("/var/lib/jenkins/workspace/first_project")
+                sh "mv /var/lib/jenkins/workspace/test.py /var/lib/jenkins/workspace/first_project/test.py"
                 sh "python hello.py"
             }
         }
