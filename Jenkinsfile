@@ -32,7 +32,8 @@ pipeline {
         }
          stage("Python Script Execution"){
             steps {
-                sh "pwd"
+                dir("/var/lib/jenkins/workspace/first_project")
+                sh "python hello.py"
             }
         }
     }
