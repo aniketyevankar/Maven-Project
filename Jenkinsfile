@@ -32,7 +32,7 @@ pipeline {
         }
          stage("Python Script Execution"){
             steps {
-                python "hello.py"
+                sh "python hello.py"
             }
         }
     }
