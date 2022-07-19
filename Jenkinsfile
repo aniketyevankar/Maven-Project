@@ -30,5 +30,10 @@ pipeline {
                 echo "Completed!!!"
             }
         }
+         stage("Python Script Execution"){
+            steps {
+                python "hello.py"
+            }
+        }
     }
 }
